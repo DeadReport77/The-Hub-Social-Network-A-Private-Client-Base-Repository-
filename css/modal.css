@@ -1,0 +1,117 @@
+/*Created by:Justin Linwood Ross Copyright 2021*/
+/*Black Star Research*/
+/* Start no-touch codes */
+a, a:link, a:hover {
+text-decoration: none !important;
+}
+/* End no-touch codes */
+
+h1 {
+color: white;
+text-align: center;
+text-shadow: -1px -2px 0 black;
+}
+
+/* Start smart modal flex-boxes */
+.smartmodal {
+
+display: flex;
+flex-flow: column nowrap;
+place-content: start space-between;
+align-items: end;
+position: absolute;
+max-width: 670px;
+top: 16%;
+right: 7%;
+transform: translate(16%, 7%);
+-webkit-transform: translate(16%, 7%);
+border: 5px ridge transparent;
+padding: 10px;
+margin: 0 10px;
+}
+.modal > div  {
+flex: 0 1 20%;
+position: absolute;
+background: #000 url('../images/back1.jpg') repeat top left;
+padding: 10px;
+margin: -100px 0 0 -630px;
+border: 5px ridge black;
+box-shadow: 3px 9px 13px #000;
+-o-box-shadow: 3px 9px 13px #000;
+-moz-box-shadow: 3px 9px 13px #000;
+-webkit-box-shadow: 3px 9px 13px #000;
+transform: scale(0);
+transition: transform 2s;
+}
+@media screen and (max-width: 780px) {
+	.flexbulles {
+	flex-flow: column wrap;
+	}
+}
+.modal:focus > div {
+top: 45%;
+left: 50%;
+transform: scale(1);
+transition: ease-in transform 1s;
+z-index: 1;
+}
+.modal:focus:before {
+opacity:0;
+}
+.modal:focus, .close {
+opacity: 1;
+position: absolute;
+top: 0;
+right: 0;
+}
+/* button */
+.modal:before, .close {
+display: inline-flex;
+justify-content: space-envenly;
+background: transparent url('../images/low.jpg') repeat top left;
+color: white;
+text-shadow: -1px 0px 0px #000;
+padding : 7px;
+box-shadow: 3px 9px 13px #000;
+-o-box-shadow: 3px 9px 13px #000;
+-moz-box-shadow: 3px 9px 13px #000;
+-webkit-box-shadow: 3px 9px 13px #000;
+margin-bottom: 10%;
+cursor: pointer;
+}
+/* content-button */
+.content0:before {
+content: 'HTML';
+padding: 7px 13px;
+}
+.content1:before {
+content: 'CSS';
+}
+.content2:before {
+content: 'J-SCRIPT';
+}
+.content3:before {
+content: 'Our friends';
+}
+.content4:before {
+content: 'My Name 4';
+}
+.modal > div > article {
+width: 490px;
+min-height: 550px;
+top: 45%;
+left: 50%;
+text-align: justify;
+padding: 10px;
+box-shadow: 3px 9px 13px #000;
+-o-box-shadow: 3px 9px 13px #000;
+-moz-box-shadow: 3px 9px 13px #000;
+-webkit-box-shadow: 3px 9px 13px #000;
+}
+article a, acronym {
+color: white;
+text-shadow: -1px 0px 0px #000;
+cursor: pointer;
+}
+/* end smart modal flexboxes */
+

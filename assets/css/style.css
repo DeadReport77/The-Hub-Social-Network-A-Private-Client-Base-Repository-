@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+  }
+  
+  html, body {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+    background-color: black;
+  }
+  
+.container {
+    border: 3px solid #0cb906;
+    border-radius: 10px;    
+  }
+
+.container > section {
+    padding: 10px;
+    text-align: center;
+    font-size: 2em;
+    color: #0cb906;
+  }
+
+.answer {
+    cursor: pointer;
+}
+
+.answer:hover {
+    color: honeydew;
+}
+
+.display {
+    align-items: center;
+    border-top: 1px dashed #0cb906;
+    border-bottom: 1px dashed #0cb906;
+    padding: 50px;
+}
+
+h1, h3, button, .timer, .question-title {
+    font-family: "Audiowide", sans-serif;
+}
+.question-title {
+    text-align: start;
+    font-size: 2rem;
+    color: goldenrod;
+}
+
+.init-form {
+    padding: 25px;
+    margin-top: 15px;
+    border: 1px solid #0cb906;
+    background-color: #4d574c;
+}
+
+.capture-init {
+    display: none;
+}
+
+input, .question-ans, .prev-score {
+    text-align: start;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-family: 'Architects Daughter', cursive;
+    padding: 30px
+}
+
+.question-title, .quiz-title {
+    text-align: start;
+}
+
+.timer {
+    text-align: end;
+    vertical-align: 0mm;
+    font-size: 1rem;
+}
+
+.buttons-row {
+    padding-bottom: 25px;
+}
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+    padding: 25px;
+    color: goldenrod;
+    font-size: .75rem;
+}
+
+a, #time-disp, #show-score {
+    color: honeydew;
+}
+
+a:hover {
+    color: #0cb906;
+}
+
+a:active {
+    color: goldenrod;
+}

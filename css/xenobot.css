@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Mono");
+body {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 340vh;
+  line-height: 1.5;
+  font-family: "PT Mono", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 16px; }
+  body *,
+  body *::before,
+  body *::after {
+    box-sizing: inherit; }
+
+.terminal {
+  width: 100vw;
+  height: 340vh;
+  background: #1e1e1e;
+  box-shadow: inset 0 0 1em 0 #141414; }
+
+.screen {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96vw;
+  height: 1800px;
+  padding: 2em;
+  overflow: hidden;
+  color:#01baef;
+  background: #031e11;
+  border-radius: 1em;
+  box-shadow: inset 0 0 1em 0 #0cbaba; }
+  .screen::before, .screen::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block; }
+  .screen::before {
+    background: linear-gradient(to bottom, rgba(30, 30, 30, 0.2), rgba(30, 30, 30, 0.2) 50%, rgba(30, 30, 30, 0.4) 50%, rgba(30, 30, 30, 0.4));
+    background-size: 100% 2px;
+     }
+  .screen::after {
+    opacity: 0;
+    background: rgba(18, 16, 16, 0.1);
+    animation: flicker .2s infinite; }
+
+@keyframes flicker {
+  0% {
+    opacity: 0.65275; }
+  4% {
+    opacity: 0.15604; }
+  8% {
+    opacity: 0.74952; }
+  12% {
+    opacity: 0.15535; }
+  16% {
+    opacity: 0.42507; }
+  20% {
+    opacity: 0.60425; }
+  24% {
+    opacity: 0.72662; }
+  28% {
+    opacity: 0.96078; }
+  32% {
+    opacity: 0.48441; }
+  36% {
+    opacity: 0.47551; }
+  40% {
+    opacity: 0.55778; }
+  44% {
+    opacity: 0.35905; }
+  48% {
+    opacity: 0.53887; }
+  52% {
+    opacity: 0.39925; }
+  56% {
+    opacity: 0.8404; }
+  60% {
+    opacity: 0.25659; }
+  64% {
+    opacity: 0.22729; }
+  68% {
+    opacity: 0.83157; }
+  72% {
+    opacity: 0.43497; }
+  76% {
+    opacity: 0.10097; }
+  80% {
+    opacity: 0.12786; }
+  84% {
+    opacity: 0.60504; }
+  88% {
+    opacity: 0.79902; }
+  92% {
+    opacity: 0.06664; }
+  96% {
+    opacity: 0.62947; }
+  100% {
+    opacity: 0.30371; } }
