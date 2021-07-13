@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Canvas Filters</title>
+        <link rel="stylesheet" href="css/img.css">
+        <script src="https://kit.fontawesome.com/c712722437.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+
+
+        <div class="title">Put filters on your image</div>
+        <div class="divParent">
+            <div id="div1" class="div1">
+                <canvas id="my-canvas"></canvas>
+            </div>
+            <div class="div2">
+                <p class="select">Upload an image</p>
+                <button id="btnInput" class="importer" for="input" type="button" ><i class="fas fa-plus"></i></button>
+                <div class="filtres">
+                    <div>
+                        <label>Grey</label><br>
+                        <input class="input" type="range" name="grey" id="grey" min="0" max="1" step="0.01" value="0" >
+                    </div>
+                    <div>
+                        <label>Sepia</label><br>
+                        <input class="input" type="range" name="sepia" id="sepia" min="0" max="1" step="0.01" value="0">
+                    </div>
+                    <div>
+                        <label>Brightness</label><br>
+                        <input class="input" type="range" name="brightness" id="brightness" min="0" max="2" step="0.01" value="1">
+                    </div>
+                    <div>
+                        <label>Invert</label><br>
+                        <input class="input" type="range" name="invert" id="invert" min="0" max="1" step="0.01" value="0">
+                    </div>
+                    <div>
+                        <label>Blur</label><br>
+                        <input class="input" type="range" name="blur" id="blur" min="0" max="20" step="1" value="0">
+                    </div>
+                </div>
+                <input id="input" type='file' style="display: none" onclick="upload()"/><br>
+                <button class="exporter" type="button" id="download">Download your image </button>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="js/script.js"></script>
+</html>

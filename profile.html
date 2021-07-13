@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/connect.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+
+    <style>
+        /*Table for Repository*/
+
+        /* Set the content of table
+        using css properties */
+        table {
+            width: 1000px; /*This will change the table cell width*/
+             margin-top:10px;
+             margin-left:10px;
+
+            text-align: center;
+            table-layout: fixed;
+        }
+
+        /* Applying css properties
+        to table components */
+        table,
+        td,
+        tr {
+            padding: 12px;
+            color: wheat;
+            background: indigo;
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 20px;
+            font-family: 'Lucida Sans',
+                'Lucida Sans Regular',
+                'Lucida Grande',
+                'Lucida Sans Unicode',
+                Geneva, Verdana, sans-serif;
+        }
+
+        /* Apply css properties to th */
+        th {
+            color: white;
+            border: 1px solid black;
+            border-collapse: collapse;
+            background: cadetblue;
+        }
+
+        /* Apply hover effect to td */
+        td:hover {
+            background: navy;
+        }
+
+        /*End of Table*/
+
+        /*Earth & Moon*/
+
+        .js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}
+
+.animated-header {
+  background: #000;
+  margin-top:0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  overflow: hidden;
+}
+
+.animated-header:before {
+  animation: show-background 60s .5s cubic-bezier(0,1,.5,1) forwards;
+  background: url(https://cssanimation.rocks/images/random/space2.jpg) repeat center;
+  background-size: cover;
+  content: "";
+  opacity: 0;
+  height: 125vh;
+  position: absolute;
+  left: -10%;
+  top: -10%;
+  width: 125vw;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #aaa;
+  font-size: 48px;
+  display: none;
+}
+
+.js-loading .loading {
+  display: block;
+}
+
+.earth {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+}
+
+.moon {
+  animation: spin 30s linear infinite;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+  transform-origin: 200px 200px;
+}
+
+.earth img, .moon img {
+  animation: show-on-load 1s .5s cubic-bezier(0,1.6,.6,1) forwards;
+  border-radius: 50%;
+  opacity: 0;
+  width: 100%;
+  box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
+}
+
+.moon img {
+  animation: fade-in 2s 1s cubic-bezier(0,1.5,1,1) forwards, spin 30s linear reverse infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes show-background {
+  0% {
+    opacity: 0;
+    transform: none;
+  }
+  30% {
+    opacity: .5;
+  }
+  100% {
+    opacity: .5;
+    transform: scale(.8)
+  }
+}
+
+@keyframes show-on-load {
+  0% {
+    opacity: 0;
+    transform: scale(.5);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <div class="ava">
+        <img src="images/6.gif" alt="avatar" style="width:200px; margin-top:40px;"/>
+        <h1  class="glow" style="padding-left:300px;"><i class="large material-icons">share</i>Avandra Loth Haim</h1>
+
+        <p class="glow" style="font-size:20px;padding-left:13px;">Establish Date:9/20/21</p>
+    </div>
+</header>
+
+    <section>
+<div class="card-container">
+    <span class="pro">PRO</span>
+    <img
+            class="round"
+            src="images/8.jpg" style="width:200px; height:200px;"
+            alt="user"/>
+    <h3>Avandra Loth Haim</h3>
+    <h6>New York</h6>
+    <p>
+        User interface designer and <br />
+        front-end developer
+    </p>
+    <div class="buttons">
+        <button class="primary">
+            Message
+        </button>
+        <button class="primary ghost">
+            Following
+        </button>
+    </div>
+    <div class="skills">
+        <h6>Skills</h6>
+        <ul>
+            <li>UI / UX</li>
+            <li>Front End Development</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node</li>
+        </ul>
+    </div>
+</div>
+
+        <!--Chat/Collaboration Section-->
+
+    </section>
+    <nav style="padding-top:80px;">
+        <div class="warning" id="no_go"></div>
+        <div class="commentbox-app">
+            <div class="container">
+                <h1 class="glow" style="top:-130px;right:300px;font-size:40px;text-align:center;padding-right:90px;">Let's Talk</h1>
+                <div class="clearfix">
+                    <form id="comment-form" style="top:-130px;right:300px;padding-bottom:100px;">
+                        <input type="text" id="comment-input" class="comment-input" placeholder="Thoughts" autocomplete="off" readonly
+                               onfocus="this.removeAttribute('readonly');">
+                        <input type="submit" value="Post" class="comment-btn">
+                    </form>
+                </div>
+
+                <ul id="comment-stream" class="comment-stream" style="left:580px;bottom:-30px;color:white;top:-490px;">
+                    <!-- dummy data:       <li>Hey! <span class="comment-remove">&times;</span></li>
+                          <li>Just a thought <span href="" class="comment-remove">&times;</span></li> -->
+                </ul>
+                <button class="remove-all-btn" id="remove-all" type="button" style="left:660px;top:-430px;">Remove all</button>
+            </div>
+        </div>
+
+        <div class="wrap" >
+
+            <button class="button"  onclick="location.href='reactor.html'"  style="top:-320px;right:-260px;"><i class="large material-icons">code</i>Reactor</button>
+            <button class="button"  onclick="location.href='cyber1.html'"  style="top:-320px;right:-400px;margin:10px;"><i class="large material-icons">share</i>Repos</button>
+            <center style="color:pink; bottom:220px;right:190px;margin-top:50px;">Click "Reactor" for Code  "Repository for Repos"<br>Note:You must request a username & password <br>through "email" from member to enter their repos.</center>
+
+        </div>
+
+        <!--Tables-->
+
+        <table style="margin-top:-90px; margin-left:140px;">
+            <tr>
+                <!-- Creating heading of table -->
+                <th>Repo Name</th>
+                <th>Code Type</th>
+                <th>Purpose</th>
+                <th>License Type</th>
+                <th>Download</th>
+
+
+            </tr>
+
+            <tr>
+                <!-- Add 1st data to table -->
+                <td>Parallax Work</td>
+                <td>HTML/CSS/JS</td>
+                <td>Business Boaster</td>
+                <td>MIT</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <!-- Add 2nd data to table -->
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <!-- Add 3rd data to table -->
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <!-- Add 4rd data to table -->
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+        </table>
+
+
+        <header class="animated-header">
+            <div class="loading">Waiting for "load" event...</div>
+            <div class="earth">
+                <img src="https://cssanimation.rocks/images/random/earth.png">
+            </div>
+            <div class="moon">
+                <img src="https://cssanimation.rocks/images/random/moon.png">
+            </div>
+
+        </header>
+
+    </nav>
+
+<script>
+    document.body.classList.add('js-loading');
+
+window.addEventListener("load", showPage, false);
+
+function showPage() {
+  document.body.classList.remove('js-loading');
+}
+</script>
+
+        <script>
+function hideWarning() {
+  document.getElementById('no_go').style.display = 'none';
+}
+
+function showWarning () {
+  document.getElementById('no_go').style.display = 'block';
+  document.getElementById('no_go').innerHTML = '<strong>Warning:</strong> App will not work if local storage is disabled or unsupported.';
+  console.warn('App will not work if local storage is disabled or unsupported.');
+}
+
+function supportsLocalStorage () {
+  return typeof localStorage !== 'undefined';
+}
+
+function getComments() {
+  return JSON.parse(localStorage.getItem('comments')) || [];
+}
+
+function saveComment (comments, commentStr, action) {
+  if (!commentStr && comments.indexOf(commentStr) < 0) {
+    action(err);
+  }
+
+  action(undefined, commentStr);
+
+}
+
+function appendToStream(stream, str, index) {
+  var li = document.createElement('LI');
+  li.setAttribute('data-index', index);
+  li.innerHTML = str;
+  stream.appendChild(li);
+}
+
+function loadComments(stream) {
+  var comments = getComments();
+  if (comments) {
+    for (var i = 0; i < comments.length; i++) {
+      appendToStream(stream, comments[i], i);
+    }
+  }
+}
+
+function clearComments(stream) {
+  localStorage.removeItem('comments');
+  stream.innerHTML = '';
+}
+
+if (supportsLocalStorage()) {
+  initApp();
+} else {
+  showWarning();
+}
+
+function initApp() {
+  hideWarning();
+
+  var commentForm = document.getElementById('comment-form'),
+      commentList = document.getElementById('comment-stream'),
+      commentInput = document.getElementById('comment-input'),
+      removeAll = document.getElementById('remove-all');
+
+  loadComments(commentList);
+
+  removeAll.addEventListener('click', function() {
+    clearComments(commentList);
+  }, true);
+
+  commentForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var commStr = commentInput.value,
+        comments = getComments();
+
+    saveComment(comments, commStr, function(err, value) {
+
+      if (err) {
+        return;
+      }
+
+      comments.push(value);
+      localStorage.setItem('comments', JSON.stringify(comments));
+      appendToStream(commentList, commStr);
+      commentInput.value = '';
+    });
+
+  }, true);
+}
+
+
+</script>
+
+
+
+</body>
+</html>

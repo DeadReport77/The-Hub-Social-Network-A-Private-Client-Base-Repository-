@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/modaldrag.css">
+    <link rel="stylesheet" href="css/xenobot.css">
+
+    <script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+    <style>
+
+        html, body{
+            background-color:#202020;
+
+
+        }
+        .box{
+            text-align:center;
+            color:white;
+
+        }
+        p{
+            font-size:20px;
+            margin:5%;
+            text-align:center;
+        }
+
+        * {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  color:black;
+}
+
+#scroll1{
+     overflow: scroll;
+}
+
+#scroll2{
+     overflow: scroll;
+}
+
+#scroll3{
+     overflow: scroll;
+
+}
+
+#scroll4{
+     overflow: scroll;
+}
+
+
+/* New overlay on hover */
+.overlay-image .hover {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+
+
+/* New overlay appearance on hover */
+
+.overlay-image:hover .hover {
+  opacity: 1;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  box-sizing: border-box;
+}
+
+body{
+  background: black;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.main-title{
+  color: #2d2d2d;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.7em 0;
+}
+
+
+
+.container5{
+  padding: 1em 0;
+  float: left;
+  width: 100%;
+}
+@media screen and (max-width: 640px){
+  .container{
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .container{
+    width: 33.33333%;
+  }
+}
+
+.container5 .title{
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3{
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p{
+  color: #fff;
+  font-size: 0.8em;
+}
+
+
+.fadeIn-top{
+  top: 20%;
+}
+
+/*Console Text Effect*/
+
+@import url(https://fonts.googleapis.com/css?family=Khula:700);
+body {
+  background: black;
+}
+.hidden {
+  opacity:0;
+}
+
+.console-container {
+  font-family:Khula;
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  width:600px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:50;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
+}
+
+
+/*Visitor Counter*/
+
+.yulaw{
+  position:absolute;
+  top:375vh;
+  box-sizing: border-box;
+  width: 200px;
+  height: 300px;
+  background: #111845a6;
+  background-image: url('./images/rain.gif');
+  padding:35px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  border: 2px solid #2a3cad;
+}
+
+
+#box:before{
+  content: '';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background: rgba(255,255,255,0.1);
+  transition:0.5s;
+  pointer-events: none;
+}
+
+#box:hover:before{
+  left:-50%;
+  transform: skewX(-18deg);
+}
+
+
+#box .content{
+  position:absolute;
+  top:15px;
+  left:15px;
+  right:15px;
+  bottom:15px;
+  border:1px solid #f0a591;
+  padding:20px;
+  text-align:center;
+  box-shadow: 0 5px 10px rgba(9,0,0,0.5);
+
+}
+
+#box a{
+  position: absolute;
+  top: -50px;
+  left: 35px;
+  width: 60%;
+  height: 104%;
+  display: block;
+  box-sizing: border-box;
+
+}
+
+#box a:nth-child(1)
+{
+  transform:rotate(0deg);
+}
+
+#box a:nth-child(2)
+{
+  transform:rotate(90deg);
+}
+
+#box a:nth-child(3)
+{
+  transform:rotate(180deg);
+}
+
+#box a:nth-child(4)
+{
+  transform:rotate(270deg);
+}
+
+#box a:before
+{
+  content: '';
+  position: absolute;
+  width:200%;
+  height: 2px;
+  background: #50dfdb;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+  transform:scaleX(0);
+  transform-origin: left;
+  }
+  50%
+  {
+    transform:scaleX(1);
+  transform-origin: left;
+  }
+  50.1%
+  {
+    transform:scaleX(1);
+  transform-origin: right;
+
+  }
+
+
+  100%
+  {
+    transform:scaleX(0);
+  transform-origin: right;
+
+  }
+
+
+}
+
+/*Navigation Menu*/
+
+.navbar {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background: #070707;
+  height: 35px;
+  width: 85%;
+  border-radius: 14px 14px 0px 0px;
+  border-bottom: 1px solid rgba(255,0,0,0.6);
+  position: relative;
+  font-size: 25px;
+  background: #000;
+
+
+}
+.fa-home, .fa-cogs, .fa-opencart, .fa-wrench, .fa-info, .fa-star, .fa-list, .fa-clipboard {
+  color: #fff;
+  float: left;
+  margin: 5px 20px;
+}
+.fa-home:hover, .fa-cogs:hover, .fa-opencart:hover, .fa-wrench:hover, .fa-info:hover, .fa-star:hover, .fa-list:hover, .fa-clipboard:hover
+{
+  color: #ff0000;
+  transition: 0.5s;
+  -webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
+  animation: bounce 1s infinite;
+}
+.fa-home:hover:after {
+  color: #ff00ff;
+  transition: 0.5s;
+  -webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+
+::-webkit-scrollbar {
+width: 15px;
+height: 15px;
+}
+::-webkit-scrollbar-track-piece  {
+background-color: #C2D2E4;
+}
+::-webkit-scrollbar-thumb:vertical {
+height: 30px;
+background-color: #0A4C95;
+}
+    </style>
+
+</head>
+<body>
+
+<center>
+    <div class="navbar">
+        <a href="home.html"><i class="fa fa-home" title="Home"></i></a>
+        <a href="welcome.html"><i class="fa fa-cogs" title="Welcome"></i></a>
+        <a href="modal.html"><i class="fa fa-opencart" title="Login"></i></a>
+        <a href="reactor.html"><i class="fa fa-wtench" title="Reactor"></i></a>
+        <a href="test.html"><i class="fa fa-info" title="Test"></i></a>
+        <a href="modal.html"><i class="fa fa-star" title="Profile"></i></a>
+        <a href="cyber1.html"><i class="fa fa-list" title="Vault"></i></a>
+        <a href=""><i class="fa fa-clipboard"></i></a>
+    </div>
+</center>
+
+<div class="container5">
+    <h3 class="title"></h3>
+    <div class="content">
+        <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="images/sim.jpg">
+            <div class="content-details fadeIn-top">
+                <h1 style="color:white;font-size:45px;margin-top:-190px;" >Are We Nothing More Then a Simulation?</h1>
+                <p style="font-size:20px;margin:auto;" >Alarming Speculations Rise In The Scientific Community</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!--Console Text-->
+
+<div style="padding-top:-90px;" class='console-container'><span id='text'></span>
+    <div class='console-underscore' id='console'>&#95;</div>
+</div>
+
+
+<div id="window" class="window" style="margin-top:175px;height:-100px;">
+    <div id="windowheader" class="title-bar">
+        <button class="close"></button>
+        <button class="minimize"></button>
+        <button class="maximize"></button>
+    </div>
+    <!--<div class="menu-bar"></div>-->
+    <div class="window-body" contenteditable="true">
+    </div>
+    <div id="windowfooter" class="window-footer">
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="column" id="scroll1" style="background-color:black;">
+        <h1 style="text-align:center;color:green;">Do We Live in a Biological Simulation?</h1>
+        <p style="text-align:left;color:green;">Gauging whether or not, we dwell inside someone else’s computer may come
+            down to advanced AI research—or measurements at the frontiers of cosmology. It is not often that a comedian gives an astrophysicist goose bumps when discussing the laws of physics.<br>
+            But comic Chuck Nice managed to do just that in a recent episode of the podcast StarTalk.The show’s host Neil deGrasse Tyson had just explained the simulation argument—the idea that we could be virtual beings living in a computer simulation. <br>If so, the simulation would most likely create perceptions of reality on demand rather than simulate all of reality all the time—much like a video game optimized to render only the parts of a scene visible to a player. “Maybe that’s why we can’t travel faster than the speed of light, because if we could, we’d be able to get to another galaxy,” said Nice, the show’s co-host, prompting Tyson to gleefully interrupt. “Before they can program it,” the astrophysicist said, delighting at the thought. “So the programmer put in that limit.” Such conversations may seem flippant. But ever since Nick Bostrom of the University of Oxford wrote a seminal paper about the simulation argument in 2003, philosophers, physicists, technologists and, yes, comedians have been grappling with the idea of our reality being a simulacrum. Some have tried to identify ways in which we can discern if we are simulated beings. Others have attempted to calculate the chance of us being virtual entities. <br>Now a new analysis shows that the odds that we are living in base reality—meaning an existence that is not simulated—are pretty much even. But the study also demonstrates that if humans were to ever develop the ability to simulate conscious beings, the chances would overwhelmingly tilt in favor of us, too, being virtual denizens inside someone else’s computer. (A caveat to that conclusion is that there is little agreement about what the term “consciousness” means, let alone how one might go about simulating it.) <br>In 2003 Bostrom imagined a technologically adept civilization that possesses immense computing power and needs a fraction of that power to simulate new realities with conscious beings in them. Given this scenario, his simulation argument showed that at least one proposition in the following trilemma must be true: First, humans almost always go extinct before reaching the simulation-savvy stage. <br>Second, even if humans make it to that stage, they are unlikely to be interested in simulating their own ancestral past. And third, the probability that we are living in a simulation is close to one. Before Bostrom, the movie The Matrix had already done its part to popularize the notion of simulated realities, and the idea has deep roots in Western and Eastern philosophical traditions, from Plato’s cave allegory to Zhuang Zhou’s butterfly dream. <br>More recently, Elon Musk gave further fuel to the concept that our reality is a simulation: “The odds that we are in base reality is one in billions,” he said at a 2016 conference. “Musk is right if you assume [propositions] one and two of the trilemma are false,” says astronomer David Kipping of Columbia University. <br>“How can you assume that?” <br>To get a better handle on Bostrom’s simulation argument, Kipping decided to resort to Bayesian reasoning. This type of analysis uses Bayes’s theorem, named after Thomas Bayes, an 18th-century English statistician and minister. Bayesian analysis allows one to calculate the odds of something happening (called the “posterior” probability) by first making assumptions about the thing being analyzed (assigning it a “prior” probability). Kipping began by turning the trilemma into a dilemma. He collapsed propositions one and two into a single statement, because in both cases, the final outcome is that there are no simulations. Thus, the dilemma pits a physical hypothesis (there are no simulations) against the simulation hypothesis (there is a base reality—and there are simulations, too). “You just assign a prior probability to each of these models,” Kipping says. “We just assume the principle of indifference, which is the default assumption when you don’t have any data or leanings either way.” So each hypothesis gets a prior probability of one half, much as if one were to flip a coin to decide a wager. <br>The next stage of the analysis required thinking about “parous” realities—those that can generate other realities—and “nulliparous” realities—those that cannot simulate offspring realities. If the physical hypothesis was true, then the probability that we were living in a nulliparous universe would be easy to calculate: it would be 100 percent. Kipping then showed that even in the simulation hypothesis, most of the simulated realities would be nulliparous. That is because as simulations spawn more simulations, the computing resources available to each subsequent generation dwindles to the point where the vast majority of realities will be those that do not have the computing power necessary to simulate offspring realities that are capable of hosting conscious beings. Plug all these into a Bayesian formula, and out comes the answer: the posterior probability that we are living in base reality is almost the same as the posterior probability that we are a simulation—with the odds tilting in favor of base reality by just a smidgen. These probabilities would change dramatically if humans created a simulation with conscious beings inside it, because such an event would change the chances that we previously assigned to the physical hypothesis. <br>“You can just exclude that [hypothesis] right off the bat. Then you are only left with the simulation hypothesis,” Kipping says. “The day we invent that technology, it flips the odds from a little bit better than 50–50 that we are real to almost certainly we are not real, according to these calculations. It’d be a very strange celebration of our genius that day.” <br>The upshot of Kipping’s analysis is that, given current evidence, Musk is wrong about the one-in-billions odds that he ascribes to us living in base reality. Bostrom agrees with the result—with some caveats. “This does not conflict with the simulation argument, which only asserts something about the disjunction,” the idea that one of the three propositions of the trilemma is true, he says. <br>But Bostrom takes issue with Kipping’s choice to assign equal prior probabilities to the physical and simulation hypothesis at the start of the analysis. <br>“The invocation of the principle of indifference here is rather shaky,” he says. “One could equally well invoke it over my original three alternatives, which would then give them one-third chance each. Or one could carve up the possibility space in some other manner and get any result one wishes.” Such quibbles are valid because there is no evidence to back one claim over the others. That situation would change if we can find evidence of a simulation. So could you detect a glitch in the Matrix? Houman Owhadi, an expert on computational mathematics at the California Institute of Technology, has thought about the question. “If the simulation has infinite computing power, there is no way you’re going to see that you’re living in a virtual reality, because it could compute whatever you want to the degree of realism you want,” he says. <br>“If this thing can be detected, you have to start from the principle that [it has] limited computational resources.” Think again of video games, many of which rely on clever programming to minimize the computation required to construct a virtual world. For Owhadi, the most promising way to look for potential paradoxes created by such computing shortcuts is through quantum physics experiments. Quantum systems can exist in a superposition of states, and this superposition is described by a mathematical abstraction called the wave function.</p>
+    </div>
+
+    <iframe width="620" height="300" src="https://www.youtube.com/embed/zmRTC6xhis4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="column" id="scroll2" style="background-color:black;">
+        <h1 style="text-align:center;color:green;">⚛The odds are about 50–50.⚛</h1>
+        <p style="text-align:left;color:green;"> In standard quantum mechanics, the act of observation causes this wave function to randomly collapse to one of many possible states. Physicists are divided over whether the process of collapse is something real or just reflects a change in our knowledge about the system. <br>“If it is just a pure simulation, there is no collapse,” Owhadi says. “Everything is decided when you look at it. The rest is just simulation, like when you’re playing these video games.” To this end, Owhadi and his colleagues have worked on five conceptual variations of the double-slit experiment, each designed to trip up a simulation. <br>But he acknowledges that it is impossible to know, at this stage, if such experiments could work. “Those five experiments are just conjectures,” Owhadi says. Zohreh Davoudi, a physicist at the University of Maryland, College Park, has also entertained the idea that a simulation with finite computing resources could reveal itself. Her work focuses on strong interactions, or the strong nuclear force—one of nature’s four fundamental forces. The equations describing strong interactions, which hold together quarks to form protons and neutrons, are so complex that they cannot be solved analytically. To understand strong interactions, physicists are forced to do numerical simulations. <br>
+            And unlike any putative super-civilizations possessing limitless computing power, they must rely on shortcuts to make those simulations computationally viable—usually by considering spacetime to be discrete rather than continuous. The most advanced result researchers have managed to coax from this approach so far is the simulation of a single nucleus of helium that is composed of two protons and two neutrons. “Naturally, you start to ask, if you simulated an atomic nucleus today, maybe in 10 years, we could do a larger nucleus; maybe in 20 or 30 years, we could do a molecule,” Davoudi says. <br>“In 50 years, who knows, maybe you can do something the size of a few inches of matter. Maybe in 100 years or so, we can do the [human] brain.” Davoudi thinks that classical computers will soon hit a wall, however. “In the next maybe 10 to 20 years, we will actually see the limits of our classical simulations of the physical systems,” she says. Thus, she is turning her sights to quantum computation, which relies on superpositions and other quantum effects to make tractable certain computational problems that would be impossible through classical approaches. “If quantum computing actually materializes, in the sense that it’s a large scale, reliable computing option for us, then we’re going to enter a completely different era of simulation,” Davoudi says. <br>“I am starting to think about how to perform my simulations of strong interaction physics and atomic nuclei if I had a quantum computer that was viable.” All of these factors have led Davoudi to speculate about the simulation hypothesis. If our reality is a simulation, then the simulator is likely also discretizing spacetime to save on computing resources (assuming, of course, that it is using the same mechanisms as our physicists for that simulation). Signatures of such discrete spacetime could potentially be seen in the directions high-energy cosmic rays arrive from: they would have a preferred direction in the sky because of the breaking of so-called rotational symmetry. Telescopes “haven’t observed any deviation from that rotational invariance yet,” Davoudi says. And even if such an effect were to be seen, it would not constitute unequivocal evidence that we live in a simulation. Base reality itself could have similar properties. Kipping, despite his own study, worries that further work on the simulation hypothesis is on thin ice. <br>“It’s arguably not testable as to whether we live in a simulation or not,” he says. “If it’s not falsifiable, then how can you claim it’s really science?” For him, there is a more obvious answer: Occam’s razor, which says that in the absence of other evidence, the simplest explanation is more likely to be correct. The simulation hypothesis is elaborate, presuming realities nested upon realities, as well as simulated entities that can never tell that they are inside a simulation. “Because it is such an overly complicated, elaborate model in the first place, by Occam’s razor, it really should be disfavored, compared to the simple natural explanation,” Kipping says. Maybe we are living in base reality after all—The Matrix, Musk and weird quantum physics notwithstanding. <br>1.)Nelson Mandela’s death:<br> Some people claim to remember TV coverage of Nelson Mandela’s death in the 1980s even though he actually died in 2013. The “Mandela Effect” is therefore supposedly proof that whoever is in charge of our simulation is changing the past. (Or alternately, this is evidence of parallel universes and some individuals have crossed from one universe, in which Mandela died in the ’80s, into ours, where he lived to age 95.) <br>Additional, examples of this phenomenon include some remembering the name of the Berenstain Bears children’s-book series being spelled as “Berentstein” and others recalling a nonexistent movie from the 1990s called Shazaam, starring the comedian Sinbad as a genie. <br>2.) Aliens:<br> We’ve spent billions sending probes through outer space and should probably have found evidence of extraterrestrials by now, right? Not so fast: Aliens would likely be far more technologically advanced than we are, the thinking goes, so the fact that we haven’t located them suggests we live in a simulation they’ve figured out how to escape from. Maybe the computer we’re in only has enough RAM to simulate one planetary civilization at a time. <br>3.)Electrons:<br> That Can’t Make Up Their Minds Photo: Dra Schwartz/Getty Images In physics’ famous double-slit experiment, electrons are fired at a photosensitive screen through slits in a copper plate, usually producing an interference pattern that indicates wavelike behavior. But when the same experiment is conducted under observation, electrons behave like particles, not waves, and there’s no interference pattern. Some have taken this to mean our simulation is conserving its resources and rendering certain things only when it knows we’re looking at them. <br>4.) DNA That Contains a Computer Virus:<br> In 2017, a multidisciplinary group of researchers at the University of Washington proved that they could embed malicious computer code into physical strands of DNA. <br>Their aim was to show that computers working in gene sequencing were vulnerable to attack. But they may also have inadvertently revealed that what we perceive to be biological reality was in fact computer code all along. <br>5.)Climate Change:<br> How Convenient Our civilization is (just coincidentally?) set on the cusp of environmental chaos, suggesting we could be an ancestor simulation created in hopes that we’d show our creators how to solve an energy crisis. This theory overlaps slightly with the aliens-as-simulation-quitters theory above: if we found an innovative solution to climate crisis, extraterrestrial beings might return to crib the results. <br>6.)Video Games That Look Like Real Life:<br> Elon Musk is a believer in Nick Bostrom’s simulation hypothesis, which posits that if humanity can survive long enough to create technology capable of running convincing simulations of reality, it will create many such simulations and therefore there will be lots of simulated realities and only one “base reality” — so statistically it’s probably more likely we live in a simulation right now. Further proof that we live in the Matrix, according to Musk, is how cool video games are these days. In 2016, he explained: “40 years ago, we had Pong. <br>Two rectangles and a dot. Now, 40 years later, we have photorealistic 3D with millions playing simultaneously. If you assume any rate of improvement at all, then the games will become indistinguishable from reality, even if that rate of advancement drops by 1,000 from what it is now. It’s a given that we’re clearly on a trajectory that we’re going to have games that are indistinguishable from reality. It would seem to follow that the odds that we’re in base reality is 1 in billions.” <br>7.)Quarks With Computer Code:<br> Seemingly not-crazy theoretical physicist James Gates claims he has identified what appears to be actual computer code embedded in the equations of string theory that describe the fundamental particles of our universe. He says he found “error-correcting codes — they’re what make [web] browsers work. So why were they in the equation I was studying about quarks and electrons and supersymmetry?” <br>8.)Why Does Our Universe Have “Rules” in the First Place?: <br>MIT cosmologist Max Tegmark has pointed to our universe’s strict laws of physics as possible evidence that we live in a video game: “If I were a character in a computer game, I would also discover eventually that the rules seemed completely rigid and mathematical.” <br>In this theory, the speed of light — the fastest rate at which any particle can travel — represents the speed limit for transmitting information within the network of our simulation. <br>9.)It’s Not Actually Possible to Prove We’re Not Living in a Simulation:<br> It may be easier to prove that we’re living in a simulation than to prove we’re not. Nuclear physicist Zohreh Davoudi believes that cosmic rays — the most energetic particles known to man — would appear as pixel-like chunks if we are within a simulation, and unending beams if we’re in base reality. Meanwhile, NYU philosopher David Chalmers doubts it’s possible to prove that we don’t live in the Matrix: “You’re not going to get proof that we’re not in a simulation, because any evidence that we get could be simulated.” <br>10.The Goldilocks Zone: <br>Earth exists within what astrobiologists call a Goldilocks Zone, close enough to a star that greenhouse gases can trap heat to keep liquid water, but far enough away that the planet does not become a Venusian hothouse. That we live in such an orbital sweet spot is circumstantial evidence for a simulation: If our sim-designers wanted us to succeed, it makes sense that they’d place us in such a cushy environment. <br>11.)It Makes More Sense Than Ghosts: <br>Paranormal events are not hauntings or alien encounters, but glitches in the simulation. This theory is the one most explored on Reddit forums like r/Are We Living in a Simulation and r/Glitch in the Matrix, where users explore big ideas in philosophy funneled into the details of the odd or the occult. <br>A storefront exists in a town one day, then it doesn’t; explanations include a slip between parallel timelines, or a pop-up. A car passenger sees the word “render” in the sky, as if entering a new part of a video game. Elevators are a frequent setting for glitch stories; the jump between floors seems to encourage a slip within dimensions. <br>12.)We Already Know What the “Bricks” of Our Matrix Are:<br> According to simulation believers, we may have already found the pixel-sized building block of the universe: the Planck-length, the point at which our concepts of gravity and spacetime no longer apply. If our world is simulated, the Planck-length would be equivalent to one bit of information, or a pixel. <br>13.)We’re Already Good at Making Simulations, and We’re Getting Even Better:<br> In 2014, the Harvard-Smithsonian Centre for Astrophysics connected 8,000 computers to create a 350 million light-year simulation of our universe and digitally aged it over 13 billion years. That The Sims video-game franchise has sold over 125 million copies in its first decade shows we’re interested in playing with simulations, too. If and when a future version of humanity finds themselves with the ability to create more realistic simulations, it wouldn’t be a surprise if they opted to use it. <br>13.)Yanny vs. Laurel:<br> Remember in 2015, when the world flipped out because we all looked at the same photo and some of us saw a blue dress, while others saw a gold dress? Or the Yanny/Laurel fiasco of 2018? (There was also the less explosive blue-gold-white flip-flop debate of 2016.) Say what you will about pitch and volume and color saturation, these controversies made one thing clear: Each of us lives in our own world. No, really. What we perceive as reality is in fact partly a simulation created by our brains (using our past experiences) to help us process the fragments of data that we’re receiving. To put it another way: There is no spoon. When Elon Musk isn’t outlining plans to use his massive rocket to leave a decaying Planet Earth and colonize Mars, he sometimes talks about his belief that Earth isn’t even real and we probably live in a computer simulation. “There’s a billion to one chance we’re living in base reality,” he said at a conference in June. <br>Musk is just one of the people in Silicon Valley to take a keen interest in the “simulation hypothesis”, which argues that what we experience as reality is actually a giant computer simulation created by a more sophisticated intelligence. If it sounds a lot like The Matrix, that’s because it is. According to this week’s New Yorker profile of Y Combinator venture capitalist Sam Altman, there are two tech billionaires secretly engaging scientists to work on breaking us out of the simulation. But what does this mean? And what evidence is there that we are, in fact, living in The Matrix? One popular argument for the simulation hypothesis, outside of acid trips, came from Oxford University’s Nick Bostrom in 2003 (although the idea dates back as far as the 17th-century philosopher René Descartes). <br>In a paper titled, “Are You Living In a Simulation?”, Bostrom suggested that members of an advanced “posthuman” civilization with vast computing power might choose to run simulations of their ancestors in the universe. This argument is extrapolated from observing current trends in technology, including the rise of virtual reality and efforts to map the human brain. Quite frankly if we are not living in a simulation it is an extraordinarily unlikely circumstance Rich Terrile, scientist at Nasa's Jet Propulsion Laboratory If we believe that there is nothing supernatural about what causes consciousness and it’s merely the product of a very complex architecture in the human brain, we’ll be able to reproduce it. “Soon there will be nothing technical standing in the way to making machines that have their own consciousness,” said Rich Terrile, a scientist at Nasa’s Jet Propulsion Laboratory. <br>At the same time, video games are becoming more and more sophisticated and in the future we’ll be able to have simulations of conscious entities inside them. Elon Musk on simulation: ‘The odds we’re in base reality is one in billions’ – video “Forty years ago we had Pong – two rectangles and a dot. That’s where we were. Now 40 years later, we have photorealistic, 3D simulations with millions of people playing simultaneously and it’s getting better every year. And soon we’ll have virtual reality, we’ll have augmented reality,” said Musk. “If you assume any rate of improvement at all, then the games will become indistinguishable from reality.” It’s a view shared by Terrile. “If one progresses at the current rate of technology a few decades into the future, very quickly we will be a society where there are artificial entities living in simulations that are much more abundant than human beings.” Recognizing we live in a simulation is game-changing, like Copernicus realizing Earth was not the center of the universe If there are many more simulated minds than organic ones, then the chances of us being among the real minds starts to look more and more unlikely. As Terrile puts it: “If in the future there are more digital people living in simulated environments than there are today, then what is to say we are not part of that already?” Reasons to believe that the universe is a simulation include the fact that it behaves mathematically and is broken up into pieces (subatomic particles) like a pixelated video game. “Even things that we think of as continuous – time, energy, space, volume – all have a finite limit to their size. <br>If that’s the case, then our universe is both computable and finite. Those properties allow the universe to be simulated,” Terrile said. “Quite frankly, if we are not living in a simulation, it is an extraordinarily unlikely circumstance,” he added. So who has created this simulation? “Our future selves,” said Terrile. Not everyone is so convinced by the hypothesis. “Is it logically possible that we are in a simulation? Yes. Are we probably in a simulation? I would say no,” said Max Tegmark, a professor of physics at MIT. <br>“In order to make the argument in the first place, we need to know what the fundamental laws of physics are where the simulations are being made. And if we are in a simulation then we have no clue what the laws of physics are. What I teach at MIT would be the simulated laws of physics,” he said. Harvard theoretical physicist Lisa Randall is even more skeptical. “I don’t see that there’s really an argument for it,” she said. “There’s no real evidence.” “It’s also a lot of hubris to think we would be what ended up being simulated.” Terrile believes that recognizing that we are probably living in a simulation is as game-changing as Copernicus realizing that the Earth was not the center of the universe. “It was such a profound idea that it wasn’t even thought of as an assumption,” he said.<br> Before Copernicus, scientists had tried to explain the peculiar behavior of the planets’ motion with complex mathematical models. “When they dropped the assumption, everything else became much simpler to understand.” That we might be in a simulation is, Terrile argues, a simpler explanation for our existence than the idea that we are the first generation to rise from primordial ooze and evolve into molecules, biology and eventually intelligence and self-awareness. The simulation hypothesis also accounts for peculiarities in quantum mechanics, particularly the measurement problem, whereby things only become defined when they are observed. “For decades it’s been a problem. Scientists have bent over backwards to eliminate the idea that we need a conscious observer. <br>Maybe the real solution is you do need a conscious entity like a conscious player of a video game,” he said. For Tegmark, this doesn’t make sense. “We have a lot of problems in physics, and we can’t blame our failure to solve them on simulation.” How can the hypothesis be put to the test? On one hand, neuroscientists and artificial intelligence researchers can check whether it’s possible to simulate the human mind. So far, machines have proven to be good at playing chess and Go and putting captions on images. But can a machine achieve consciousness? We don’t know. On the other hand, scientists can look for hallmarks of simulation. “Suppose someone is simulating our universe – it would be very tempting to cut corners in ways that makes the simulation cheaper to run. You could look for evidence of that in an experiment,” said Tegmark. For Terrile, the simulation hypothesis has “beautiful and profound” implications. First, it provides a scientific basis for some kind of afterlife or larger domain of reality above our world. “You don’t need a miracle, faith or anything special to believe it. It comes naturally out of the laws of physics,” he said. Second, it means we will soon have the same ability to create our own simulations. “We will have the power of mind and matter to be able to create whatever we want and occupy those worlds.”</p>
+    </div>
+    <iframe width="620" height="300" src="https://www.youtube.com/embed/iOWFXqT5MZ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
+
+
+<div class="row">
+    <div class="column" id="scroll3" style="background-color:black;">
+        <h1 style="text-align:center;color:green;">Unexplained Anomalies<br> that challenge our logic.</h1>
+        <p style="text-align:left;color:green;">1.)The placebo effect:<br>Don’t try this at home. Several times a day, for several days, you induce pain in someone. You control the pain with morphine until the final day of the experiment, when you replace the morphine with saline solution. Guess what? The saline takes the pain away.<br>This is the placebo effect: somehow, sometimes, a whole lot of nothing can be very powerful. Except it’s not quite nothing. When Fabrizio Benedetti of the University of Turin in Italy carried out the above experiment, he added a final twist by adding naloxone, a drug that blocks the effects of morphine, to the saline. The shocking result? The pain-relieving power of saline solution disappeared.<br>So what is going on? Doctors have known about the placebo effect for decades, and the naloxone result seems to show that the placebo effect is somehow biochemical. But apart from that, we simply don’t know.
+            Benedetti has since shown that a saline placebo can also reduce tremors and muscle stiffness in people with Parkinson’s disease. He and his team measured the activity of neurons in the patients’ brains as they administered the saline. They found that individual neurons in the subthalamic nucleus (a common target for surgical attempts to relieve Parkinson’s symptoms) began to fire less often when the saline was given, and with fewer “bursts” of firing – another feature associated with Parkinson’s. The neuron activity decreased at the same time as the symptoms improved: the saline was definitely doing something.<br>We have a lot to learn about what is happening here, Benedetti says, but one thing is clear: the mind can affect the body’s biochemistry. “The relationship between expectation and therapeutic outcome is a wonderful model to understand mind-body interaction,” he says. Researchers now need to identify when and where placebo works. There may be diseases in which it has no effect. There may be a common mechanism in different illnesses. As yet, we just don’t know.</p>
+    </div>
+
+    <iframe width="620" height="300" src="https://www.youtube.com/embed/X_YVeB6JLb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="column" id="scroll4" style="background-color:black;margin:auto;">
+        <h1 style="text-align:center;color:green;">NASA Baffled by Unexplained Force Acting on Space Probes</h1>
+        <p style="text-align:left;color:green;">Mysteriously, four spacecraft that flew past the Earth have each displayed unexpected anomalies in their motions.
+
+            These newfound enigmas join the so-called "Pioneer anomaly" as hints that unexplained forces may appear to act on spacecraft.
+
+            A decade ago, after rigorous analyses, anomalies were seen with the identical Pioneer 10 and 11 spacecraft as they hurtled out of the solar system. Both seemed to experience a tiny but unexplained constant acceleration toward the sun.
+
+            A host of explanations have been bandied about for the Pioneer anomaly. At times these are rooted in conventional science — perhaps leaks from the spacecraft have affected their trajectories. At times these are rooted in more speculative physics — maybe the law of gravity itself needs to be modified.</p>
+    </div>
+    <iframe  width="620" height="300" src="https://www.youtube.com/embed/RaELad94KZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
+
+<div class="terminal" >
+    <center style="color:#5de6de;font-size:70px;">☣XeNoBots☣</center>
+    <p style="text-align:center;color:#63a4ff;margin-top:1%;">-Proof that robots can be created from a living orginism-<br>How are we an exception?</p>
+    <iframe style="padding-left:90px;margin-left:320px;top:20px;" width="540" height="320" src="https://www.youtube.com/embed/e1MOKBB8I58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="screen" style="margin-top:90px;"><b>Xenobots 2.0: Scientists Create the Next Generation of Living Robots</b><br><br>Artificial living organisms can move material in swarms and record information.
+        Last year, a team of biologists and computer scientists from Tufts University and the University of Vermont (UVM) created novel, tiny self-healing biological machines from frog cells called “Xenobots” that could move around, push a payload, and even exhibit collective behavior in the presence of a swarm of other Xenobots.<br><b><br>Get ready for Xenobots 2.0.</b>
+
+        The same team has now created life forms that self-assemble a body from single cells, do not require muscle cells to move, and even demonstrate the capability of recordable memory. The new generation Xenobots also move faster, navigate different environments, and have longer lifespans than the first edition, and they still have the ability to work together in groups and heal themselves if damaged. The results of the new research were published in Science Robotics.<br><br>Compared to Xenobots 1.0, in which the millimeter-sized automatons were constructed in a “top down” approach by manual placement of tissue and surgical shaping of frog skin and cardiac cells to produce motion, the next version of Xenobots takes a “bottom up” approach. The biologists at Tufts took stem cells from embryos of the African frog Xenopus laevis (hence the name “Xenobots”) and allowed them to self-assemble and grow into spheroids, where some of the cells after a few days differentiated to produce cilia – tiny hair-like projections that move back and forth or rotate in a specific way. Instead of using manually sculpted cardiac cells whose natural rhythmic contractions allowed the original Xenobots to scuttle around, cilia give the new spheroidal bots “legs” to move them rapidly across a surface. In a frog, or human for that matter, cilia would normally be found on mucous surfaces, like in the lungs, to help push out pathogens and other foreign material. On the Xenobots, they are repurposed to provide rapid locomotion.<br><br>“We are witnessing the remarkable plasticity of cellular collectives, which build a rudimentary new ‘body’ that is quite distinct from their default – in this case, a frog – despite having a completely normal genome,” said Michael Levin, Distinguished Professor of Biology and director of the Allen Discovery Center at Tufts University, and corresponding author of the study. “In a frog embryo, cells cooperate to create a tadpole. Here, removed from that context, we see that cells can re-purpose their genetically encoded hardware, like cilia, for new functions such as locomotion. It is amazing that cells can spontaneously take on new roles and create new body plans and behaviors without long periods of evolutionary selection for those features.”<br><br>“In a way, the Xenobots are constructed much like a traditional robot. Only we use cells and tissues rather than artificial components to build the shape and create predictable behavior.” said senior scientist Doug Blackiston, who co-first authored the study with research technician Emma Lederer. “On the biology end, this approach is helping us understand how cells communicate as they interact with one another during development, and how we might better control those interactions.”<br><br>While the Tufts scientists created the physical organisms, scientists at UVM were busy running computer simulations that modeled different shapes of the Xenobots to see if they might exhibit different behaviors, both individually and in groups. Using the Deep Green supercomputer cluster at UVM’s Vermont Advanced Computing Core, the team, led by computer scientists and robotics experts Josh Bongard and under hundreds of thousands of random environmental conditions using an evolutionary algorithm. These simulations were used to identify Xenobots most able to work together in swarms to gather large piles of debris in a field of particles.<br><br>“We know the task, but it’s not at all obvious — for people — what a successful design should look like. That’s where the supercomputer comes in and searches over the space of all possible Xenobot swarms to find the swarm that does the job best,” says Bongard. “We want Xenobots to do useful work. Right now we’re giving them simple tasks, but ultimately we’re aiming for a new kind of living tool that could, for example, clean up microplastics in the ocean or contaminants in soil.”<br><br>It turns out, the new Xenobots are much faster and better at tasks such as garbage collection than last year’s model, working together in a swarm to sweep through a petri dish and gather larger piles of iron oxide particles. They can also cover large flat surfaces, or travel through narrow capillaries. These studies also suggest that the in silico simulations could in the future optimize additional features of biological bots for more complex behaviors. One important feature added in the Xenobot upgrade is the ability to record information.<br><br>Now with memory<br><br>
+        A central feature of robotics is the ability to record memory and use that information to modify the robot’s actions and behavior. With that in mind, the Tufts scientists engineered the Xenobots with a read/write capability to record one bit of information, using a fluorescent reporter protein called EosFP, which normally glows green. However, when exposed to light at 390nm wavelength, the protein emits red light instead.
+
+        The cells of the frog embryos were injected with messenger RNA coding for the EosFP protein before stem cells were excised to create the Xenobots. The mature Xenobots now have a built-in fluorescent switch that can record exposure to blue light around 390nm.
+
+        The researchers tested the memory function by allowing 10 Xenobots to swim around a surface on which one spot is illuminated with a beam of 390nm light. After two hours, they found that three bots emitted red light. The rest remained their original green, effectively recording the “travel experience” of the bots.<br><br>This proof of principle of molecular memory could be extended in the future to detect and record not only light but also the presence of radioactive contamination, chemical pollutants, drugs, or a disease condition. Further engineering of the memory function could enable the recording of multiple stimuli (more bits of information) or allow the bots to release compounds or change behavior upon sensation of stimuli.
+
+        “When we bring in more capabilities to the bots, we can use the computer simulations to design them with more complex behaviors and the ability to carry out more elaborate tasks,” said Bongard. “We could potentially design them not only to report conditions in their environment but also to modify and repair conditions in their environment.”<br><br>Xenobot, heal thyself
+        “The biological materials we are using have many features we would like to someday implement in the bots – cells can act like sensors, motors for movement, communication and computation networks, and recording devices to store information,” said Levin. “One thing the Xenobots and future versions of biological bots can do that their metal and plastic counterparts have difficulty doing is constructing their own body plan as the cells grow and mature, and then repairing and restoring themselves if they become damaged. Healing is a natural feature of living organisms, and it is preserved in Xenobot biology.”
+
+        The new Xenobots were remarkably adept at healing and would close the majority of a severe full-length laceration half their thickness within 5 minutes of the injury. All injured bots were able to ultimately heal the wound, restore their shape and continue their work as before.
+
+        Another advantage of a biological robot, Levin adds, is metabolism. Unlike metal and plastic robots, the cells in a biological robot can absorb and break down chemicals and work like tiny factories synthesizing and excreting chemicals and proteins. The whole field of synthetic biology – which has largely focused on reprogramming single celled organisms to produce useful molecules – can now be exploited in these multicellular creatures.
+
+        Like the original Xenobots, the upgraded bots can survive up to ten days on their embryonic energy stores and run their tasks without additional energy sources, but they can also carry on at full speed for many months if kept in a “soup” of nutrients.
+
+    </div>
+
+
+</div>
+
+<div class="yulaw" id="box">
+
+        <a style="margin-top:100px;" target="_blank" href="https://24counter.com/conline/1625434917/"><img alt="Website Audience by Country" border="0" src="https://24counter.com/online/fcc.php?id=1625434917"></a><br><a target="_blank" href="https://24counter.com"></a>
+
+</div>
+
+<script src="js/modaldrag.js"></script>
+<script src="js/console.js"></script>
+<script src="js/xenobot.js"></script>
+<script src="js/intiddos.js"></script>
+
+</body>
+</html>

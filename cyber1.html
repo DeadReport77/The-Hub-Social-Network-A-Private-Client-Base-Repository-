@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+
+
+    <script src=
+                    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+    <script src=
+                    "https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js">
+    </script>
+
+
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: left;
+            color: 	#98eff9;
+            padding-top:50px;
+            margin-left:920px;
+        }
+
+        .full-landing-image {
+            width: 100%;
+            height: 100vh;
+        }
+
+
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    text-align: center;
+    margin-left:400px;
+    padding: 50px 22px;
+    width: 370px;
+    transform: translate(-50%, -50%);
+    background:transparent;
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+.content header {
+    background:transparent;
+    font-size: 33px;
+    font-weight: 600;
+    margin: 0 0 35px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.field {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    background: rgba(255, 255, 255, 0.94);
+}
+
+.field span {
+    background: transparent;
+    width: 40px;
+    line-height: 45px;
+}
+
+.field input {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    opacity: 0.5;
+    background:transparent;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.space {
+    margin-top: 16px;
+}
+
+.show {
+    position: absolute;
+    right: 13px;
+    font-size: 13px;
+    font-weight: 700;
+    background:transparent;
+    display: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pass-key:valid~.show {
+    display: block;
+}
+
+.pass {
+ opacity: 0.5;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.pass a {
+ opacity: 0.5;
+    background:transparent;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pass:hover a {
+    text-decoration: underline;
+}
+
+.field input[type="submit"] {
+    background: transparent;
+    border: 1px solid transparent;
+    opacity: 0.5;
+    background:transparent;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.field input[type="submit"]:hover {
+   background-color:transparent;
+}
+
+.login {
+    background: transparent;
+    margin: 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.links {
+    display: flex;
+    cursor: pointer;
+    background:transparent;
+    margin: 0 0 20px 0;
+}
+
+
+.links i {
+    font-size: 17px;
+}
+
+i span {
+    margin-left: 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+</style>
+
+    <!--Security Function Mouse Disable-->
+    <script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+
+</head>
+
+<body  background="images/v1.jpg" style="background-repeat:no-repeat;" >
+
+<div class="full-landing-image">
+    <h2 >Vector 4 Authorization </h2>
+</div>
+
+<div class="bg-img">
+    <div class="content">
+        <img src="images/9.gif" style="width:280px;height:160px;">
+        <form action="repos.html">
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <input type="text" required placeholder="Email or Phone" style="opacity: 0.5;" autocomplete="off" readonly
+                onfocus="this.removeAttribute('readonly');">
+            </div>
+            <div class="field space">
+                <span class="fa fa-lock"></span>
+                <input type="password" class="pass-key" required placeholder="Password" style="opacity: 0.5;" autocomplete="off" readonly
+                       onfocus="this.removeAttribute('readonly');">
+                <span class="show">SHOW</span>
+            </div>
+
+            <!--Add a reference point for forgotten password-->
+            <div class="pass">
+                <a href="#" style="color:crimson;">Forgot Password?</a>
+            </div>
+            <div class="field">
+                <input type="submit" value="LOGIN" style="color:;crimson">
+            </div>
+        </form>
+        <div class="login">
+            Or login with</div>
+        <div class="links">
+
+        </div>
+
+    </div>
+</div>
+
+<!-- This Script is from www.htmlfreecodes.com, Provided by: Mahmood Bina -->
+<script type='text/javascript' src='http://m.free-codes.org/gh.php?id=2001'></script>
+
+
+<script type="text/javascript" src="http://htmlfreecodes.com/codes/rain.js"></script>
+
+<a target="_blank" href="http://free-web-tools.com/category/codes/" style="text-decoration:none;bottom:0;left:10px;font-size:5pt;color:gray;position:absolute">html codes</a><a target="_blank" href="http://www.htmlfreecodes.com" style="font-size: 8pt; text-decoration: none"></a>
+
+
+<!--library-->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="js/app.js"></script>
+<script type="text/javascript">
+        $(".full-landing-image").ripples({
+            resolution: 512,
+            dropRadius: 20,
+            interactive: true,
+            perturbance: 0.02,
+        });
+    </script>
+
+</body>
+</html>

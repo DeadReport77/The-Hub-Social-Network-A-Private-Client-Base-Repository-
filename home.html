@@ -1,0 +1,296 @@
+<!-- The video -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+
+
+.blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}
+    /*Marquee*/
+
+    .example1 {
+ height: 50px;
+ overflow: hidden;
+ position: relative;
+}
+.example1 h1 {
+ font-size: 3em;
+ color:white;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);
+ transform:translateX(100%);
+
+ /* Apply animation to this element */
+ -moz-animation: example1 25s linear infinite;
+ -webkit-animation: example1 25s linear infinite;
+ animation: example1 25s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes example1 {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes example1 {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes example1 {
+ 0%   {
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%);
+ }
+ 100% {
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%);
+ }
+}
+
+
+
+    /* Style the video: 100% width and height to cover the entire window */
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+/*Moving image*/
+.img {
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 2s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+/*Hypnotic*/
+@import url(https://fonts.googleapis.com/css?family=Hammersmith+One);
+
+@keyframes sway {
+	to { transform: rotate(30deg);   }
+}
+@keyframes fade {
+	to { opacity: 1; }
+}
+@keyframes widen {
+	to { width: 40%; }
+}
+@keyframes secondcount {
+	to { transform: rotate(355deg); }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #111;
+  color: #fff;
+  text-align: center;
+  font-family: 'Hammersmith One', sans-serif;
+}
+body > * { position: relative; }
+#watch {
+  width: 12vw; height: auto;
+  margin: 0 auto;
+  transform-origin: center top;
+  transform: rotate(-30deg);
+  top: -10px;
+  animation: sway 2.2s infinite alternate ease-in-out;
+}
+#watch img.watch { width: 100%; height: auto; }
+img.seconds {
+  position: absolute;
+  width: 8%; height:auto;
+  bottom: 11.75%; left: 45%;
+  transform-origin: center 72.4%;
+  animation: secondcount 60s infinite linear;
+}
+h2 {
+  font-size: 10vw;
+  top: -35vw; text-shadow: 0 0 3px 4px rgba(0,0,0,0.3);
+  opacity: 0;
+  animation: fade 4s 2s forwards;
+}
+h2 {
+  font-weight: 100;
+  font-size: 3vw;
+  top: -20vw;
+  letter-spacing: .2vw;
+  opacity: 0;
+  animation: fade 2s 7s forwards;
+}
+
+/*Top Title*/
+
+#glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+</style>
+
+
+    <script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+</head>
+
+<body style="background:black;">
+
+
+
+<img class="img" style="width:100px;height:100px;float:right;margin-top:90px;" src="images/logo2.gif">
+<img class="img" style="width:100px;height:100px;float:left;margin-top:90px;" src="images/logo2.gif">
+<video autoplay muted loop id="myVideo" style="width:75%;height:55%;">
+    <source src="video/a2.mp4" type="video/mp4">
+</video>
+
+
+
+<!-- Optional: some overlay text to describe the video -->
+<div class="content" style="margin-left:-48px;height:40%;">
+
+    <!-- HTML -->
+    <div class="example1">
+        <h1 class="blinking">Welcome to the Dark Hub Private Network</h1>
+    </div>
+
+
+    <p style="text-align:center;font-size:20px;fot-size:20px;"  class="glow">A Private Community for Pagan Programmers</p>
+    <a href="welcome.html"><center class="blinking" id="glow" style="font-size:15px;">"Join Us Forever"</center></a>
+    <!-- Use a button to navigate with JavaScript -->
+
+</div>
+
+<div id="watch" style="margin-top:-70px;">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/pocketwatch-no-second-hand.png" alt="Pocketwatch on chain" class="watch">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/second-hand.png" alt="Pocketwatch second hand" class="seconds">
+</div>
+
+<hr>
+
+
+
+<script>
+// Get the video
+var video = document.getElementById("myVideo");
+
+// Get the button
+var btn = document.getElementById("myBtn");
+
+// Pause and play the video, and change the button text
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport" content=
+            "width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/modal.css" type="text/css">
+
+    <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+    <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+    <style lang="en" type="text/css" id="dark-mode-custom-style"></style>
+    <style lang="en" type="text/css" id="dark-mode-native-style"></style>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="title" content="Convert HTML tags for display">
+    <meta name="description" content="A conversion tool that replaces HTML tag delimiters in coding samples with their counterpart HTML symbols so that they will display as HTML tags in posted messages. The conversion also highlights the HTML tags in red.">
+    <meta name="keywords" content="HTML tag, HTML, tag, conversion, HTML symbol">
+    <meta name="author" content="Michael Botos">
+    <meta name="reply-to" content="botosm@botos.com">
+    <meta name="copyright" content="2008">
+    <meta name="robots" content="all">
+    <meta name="revisit-after" content="30 days">
+
+    <script type="text/javascript" src="js/modal2.js"></script>
+
+    <link rel="stylesheet" href="./sticky.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Set title of web page -->
+    <title>Dark Hub Repository</title>
+
+    <script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+
+    <script language="JavaScript">
+
+  function toCharEnt() {
+    var mtoc = /<([^<>]*)>/g;
+    var box1 = document.convert.textbox1;
+    var box2 = document.convert.textbox2;
+	box2.value = box1.value.replace(mtoc,"<span style=color:red>&lt;$1&gt;</span>");
+    if ( document.convert.withPre.checked )
+       box2.value = "<pre>\n" + box2.value + "\n</pre>"
+
+	newWindow = window.open('','newWin','width=415,height=400,location=1,scrollbars=1,resizable=1', 'replace');
+	newWindow.document.write("<h3>Approximate look of posted content</h3>");
+	newWindow.document.write(box2.value);
+	newWindow.moveTo(0,100);
+	newWindow.document.close();
+	newWindow.focus();
+    }
+ function selectAll(theField) {
+var tempval=eval("document."+theField)
+tempval.focus()
+tempval.select()
+}
+
+
+  </script>
+
+    <style>
+
+    	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,900');
+*{
+  box-sizing:border-box;
+
+}
+body{
+  background:black;
+  margin:0;
+  padding:0;
+  font-family: 'Montserrat', sans-serif;
+}
+.wrapper{
+  width: 90%;
+  padding:5rem;
+  grid-gap: 0.2rem;
+  color:white;
+  position: absolute;
+  margin-top:-200px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+.blackpink{
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 8px;
+  padding:0rem 2rem;
+  border: 10px solid white;
+  text-align: center;
+  opacity:0;
+  border-radius: 5px;
+  animation:lightson .5s ease 3 forwards;
+}
+@keyframes lightson{
+  0%{
+    opacity:0;
+    text-shadow: 0px 0px 0px #FE1DAD, 0px 0px 0px #FE1DAD, 0px 0px 0px #FE1DAD;
+    box-shadow: 0px 0px 0px 0px #fe1dad, 0px 0px 0px 0px #fe1dad,0px 0px 0px 0px #fe1dad, inset 0px 0px 0px #FE1DAD;
+  }
+  20%{
+    opacity:0.5;
+    text-shadow: 0px 0px 2.5px #FE1DAD, 0px 0px 5px #FE1DAD, 1px 1px 25px #FE1DAD;
+    box-shadow: 0px 0px 5px 0px #fe1dad, 0px 0px 10px 0px #fe1dad,0px 0px 50px 0px #fe1dad, inset 0px 0px 20px #FE1DAD;
+  }
+  40%{
+    opacity:0;
+    text-shadow: 0px 0px 1px #FE1DAD, 0px 0px 2px #FE1DAD, 0px 0px 10px #FE1DAD;
+    box-shadow: 0px 0px 2px 0px #fe1dad, 0px 0px 5px 0px #fe1dad,0px 0px 25px 0px #fe1dad, inset 0px 0px 10px #FE1DAD;
+  }
+  50%{
+    opacity:1;
+    text-shadow: 0px 0px 5px #FE1DAD, 0px 0px 10px #FE1DAD, 1px 1px 50px #FE1DAD;
+    box-shadow: 0px 0px 10px 0px #fe1dad, 0px 0px 20px 0px #fe1dad,0px 0px 100px 0px #fe1dad, inset 0px 0px 30px #FE1DAD;
+  }
+  100%{
+    opacity:1;
+    text-shadow: 0px 0px 5px #FE1DAD, 0px 0px 10px #FE1DAD, 1px 1px 50px #FE1DAD;
+    box-shadow: 0px 0px 10px 0px #fe1dad, 0px 0px 30px 0px #fe1dad,0px 0px 100px 0px #fe1dad, inset 0px 0px 30px #FE1DAD;
+  }
+}
+
+.blackpink span{
+  transform: scaleX(-1);
+  display: inline-block;
+}
+.blackpink__tagline{
+  text-align: right;
+  font-size: .8rem;
+}
+
+@media(max-width: 1150px){
+  .blackpink{
+    font-size: 5rem;
+    padding:2rem 0;
+    letter-spacing: 2px;
+  }
+}
+
+
+@media(max-width: 789px){
+  .wrapper{
+     width: 100%;
+     padding:2rem;
+}
+  .blackpink{
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+}
+    </style>
+
+
+
+    <!--The Javascript below controls modal window that pops-up on page load-->
+
+    <script type="text/javascript">
+	window.onload = function() {
+  document.getElementById('button').onclick = function() {
+    document.getElementById('modalOverlay').style.display = 'none'
+  };
+};
+	</script>
+
+    <style>
+
+    /*Modal Window Pop-Up*/
+
+	#modalOverlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.5);
+			z-index: 99999;
+			height: 100%;
+			width: 100%;
+	}
+.modalPopup {
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: #fff;
+			width: 50%;
+			padding: 0 0 30px;
+			-webkit-box-shadow: 0 2px 10px 3px rgba(0,0,0,.2);
+			-moz-box-shadow: 0 2px 10px 3px rgba(0,0,0,.2);
+			box-shadow: 0 2px 10px 3px rgba(0,0,0,.2);
+	}
+.modalContent {padding: 0 2em;}
+.headerBar {
+		width: 100%;
+		background: #edcb04 url(http://cognex.com/gfx/site/bg-global-header.png) repeat-x 0 0;
+		margin: 0;
+	  text-align: center;
+	}
+.headerBar img {
+		margin: 1em .7em;
+	}
+h1 {
+  margin-bottom: .2em;
+  font-size: 26px;
+  text-transform: capitalize;
+}
+p {margin: .75em 0 1.5em;}
+.buttonStyle {
+		border: transparent;
+		border-radius: 0;
+		background: #6d6d6d;
+		color: #eee !important;
+		cursor: pointer;
+		font-weight: bold;
+		font-size: 14px;
+		text-transform: uppercase;
+		padding: 6px 25px;
+		text-decoration: none;
+		background: -moz-linear-gradient(top, #6d6d6d 0%, #1e1e1e 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6d6d6d), color-stop(100%,#1e1e1e));
+		background: -webkit-linear-gradient(top, #6d6d6d 0%,#1e1e1e 100%);
+		background: -o-linear-gradient(top, #6d6d6d 0%,#1e1e1e 100%);
+		background: -ms-linear-gradient(top, #6d6d6d 0%,#1e1e1e 100%);
+		background: linear-gradient(to bottom, #6d6d6d 0%,#1e1e1e 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#1e1e1e',GradientType=0 );
+	/*	-webkit-box-shadow: 0 2px 4px 0 #999;
+		box-shadow: 0 2px 4px 0 #999; */
+		-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		transition: all 1s ease;
+	}
+	.buttonStyle:hover {
+		background: #1e1e1e;
+		color: #fff;
+		background: -moz-linear-gradient(top, #1e1e1e 0%, #6d6d6d 100%, #6d6d6d 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e1e1e), color-stop(100%,#6d6d6d), color-stop(100%,#6d6d6d));
+		background: -webkit-linear-gradient(top, #1e1e1e 0%,#6d6d6d 100%,#6d6d6d 100%);
+		background: -o-linear-gradient(top, #1e1e1e 0%,#6d6d6d 100%,#6d6d6d 100%);
+		background: -ms-linear-gradient(top, #1e1e1e 0%,#6d6d6d 100%,#6d6d6d 100%);
+		background: linear-gradient(to bottom, #1e1e1e 0%,#6d6d6d 100%,#6d6d6d 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1e1e', endColorstr='#6d6d6d',GradientType=0 );
+	}
+.returnToProfile {text-align: center; margin:3em;}
+.returnToProfile a, .returnToProfile a:visited {color: #ddd;}
+.returnToProfile a:hover {color: #fff;}
+
+        /*End of Modal Pop-up*/
+
+
+    /*Glowing Text*/
+
+    .glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+    /*End of Glowing Text*/
+
+
+    /*Table for Repository*/
+
+        /* Set the content of table
+        using css properties */
+        table {
+            width: 1000px; /*This will change the table cell width*/
+             margin-top:10px;
+             margin-left:10px;
+
+            text-align: center;
+            table-layout: fixed;
+        }
+
+        /* Applying css properties
+        to table components */
+        table,
+        td,
+        tr {
+            padding: 12px;
+            color: wheat;
+            background: indigo;
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 20px;
+            font-family: 'Lucida Sans',
+                'Lucida Sans Regular',
+                'Lucida Grande',
+                'Lucida Sans Unicode',
+                Geneva, Verdana, sans-serif;
+        }
+
+        /* Apply css properties to th */
+        th {
+            color: white;
+            border: 1px solid black;
+            border-collapse: collapse;
+            background: cadetblue;
+        }
+
+        /* Apply hover effect to td */
+        td:hover {
+            background: navy;
+        }
+
+        /*End of Table*/
+
+
+        /*Scrolling text title*/
+
+
+
+html{
+  height: 100%;
+}
+
+   body {
+  height: 300%;
+  margin: 0;
+  margin-top: 50px;
+  padding:0;
+  background: #000;
+  color: #fff;
+  user-select: none;
+  width: 100%;
+}
+
+
+
+
+.plane {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: -200px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* ----- Main Sphere ----- */
+.circle{
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  animation: rotate 30s infinite linear;
+  animation: view 30s infinite linear;
+  border-radius: 200px;
+  box-shadow: 0px 0px 50px black;
+  box-shadow: inset 0px 5px 50px black, 0px 0px 30px  crimson;
+  z-index: 2;
+  background: rgba(0,0,0,0.05);
+  border-bottom: 1px solid crimson;
+  border-top: 1px solid crimson;
+}
+
+/* ----- Inner Sphere ----- */
+.inner{
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  animation: inner_rotate 60s infinite linear;
+  animation: inner_view 10s infinite linear;
+  border-radius: 80px;
+  box-shadow: inset 0px 0px 30px 0px crimson, 0px 0px 75px 0px white;
+  border: 1px solid crimson;
+}
+
+/* ----- Dot Sphere ----- */
+.dot{
+  transform-style: preserve-3d;
+  animation: dot_view 10s infinite linear;
+  border-radius: 50px;
+  box-shadow: inset 0px 0px 10px 0px crimson, 0px 0px 20px 0px white;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid crimson;
+}
+/* ----- Dot 1 Container ----- */
+#dot1{
+  transform-style: preserve-3d;
+  animation: axis_rotate1 10s infinite linear;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+
+/* ----- Dot 2 Container ----- */
+#dot2{
+  transform-style: preserve-3d;
+  animation: axis_rotate2 10s infinite linear;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+
+/* ----- Dot 3 Container ----- */
+#dot3{
+  transform-style: preserve-3d;
+  animation: axis_rotate3 10s infinite linear;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+
+/* ----- Dot 4 Container ----- */
+#dot4{
+  transform-style: preserve-3d;
+  animation: axis_rotate4 10s infinite linear;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+
+/* ----- Dot 5 Container ----- */
+#dot5{
+  transform-style: preserve-3d;
+  animation: axis_rotate5 10s infinite linear;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+
+/* ----- Dot 6 Container ----- */
+#dot6{
+  transform-style: preserve-3d;
+  animation: axis_rotate6 10s infinite linear;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+
+/* ----- Main Rotation ----- */
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* ----- Main View ----- */
+@keyframes view {
+  from {
+    transform: rotateX(60deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(60deg) rotateZ(360deg);
+  }
+}
+
+/* ----- Dot  View ----- */
+@keyframes dot_view {
+  0% {
+    transform: rotateX(60deg) rotateY(0deg);
+    width: 30px;
+    height: 30px;
+  }
+  10% {
+    width: 30px;
+    height: 30px;
+  }
+  50% {
+    transform: rotateX(60deg) rotateY(180deg);
+  }
+  65% {
+    width: 50px;
+    height: 50px;
+  }
+  90% {
+    width: 30px;
+    height: 30px;
+  }
+  100% {
+    transform: rotateX(60deg) rotateY(360deg);
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ----- Inner Rotation ----- */
+@keyframes inner_rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* ----- Inner View ----- */
+@keyframes inner_view {
+  from {
+    transform: rotateY(60deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateY(60deg) rotateZ(360deg);
+  }
+}
+
+/* ----- Axis rotation for Sphere 1 ----- */
+@keyframes axis_rotate1 {
+    0% {
+        transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg);
+        z-index: 1;
+    }
+    50% {
+        z-index: 1;
+    }
+    50% {
+        z-index: 3;
+    }
+    100% {
+        transform: rotateX(60deg) rotateY(0deg) rotateZ(360deg);
+        z-index: 3;
+    }
+}
+
+/* ----- Axis rotation for Sphere 2 ----- */
+@keyframes axis_rotate2 {
+    0% {
+        transform: rotateX(60deg) rotateY(60deg) rotateZ(0deg);
+        z-index: 1;
+    }
+    50% {
+        z-index: 1;
+    }
+    50% {
+        z-index: 3;
+    }
+    100% {
+        transform: rotateX(60deg) rotateY(60deg) rotateZ(360deg);
+        z-index: 3;
+    }
+}
+
+/* ----- Axis rotation for Sphere 3 ----- */
+@keyframes axis_rotate3 {
+    0% {
+        transform: rotateX(60deg) rotateY(120deg) rotateZ(0deg);
+        z-index: 1;
+    }
+    50% {
+        z-index: 1;
+    }
+    50% {
+        z-index: 3;
+    }
+    100% {
+        transform: rotateX(60deg) rotateY(120deg) rotateZ(360deg);
+        z-index: 3;
+    }
+}
+
+/* ----- Axis rotation for Sphere 4 ----- */
+@keyframes axis_rotate4 {
+    0% {
+        transform: rotateX(60deg) rotateY(180deg) rotateZ(0deg);
+        z-index: 1;
+    }
+    50% {
+        z-index: 1;
+    }
+    50% {
+        z-index: 3;
+    }
+    100% {
+        transform: rotateX(60deg) rotateY(180deg) rotateZ(360deg);
+        z-index: 3;
+    }
+}
+
+/* ----- Axis rotation for Sphere 5 ----- */
+@keyframes axis_rotate5 {
+    0% {
+        transform: rotateX(60deg) rotateY(240deg) rotateZ(0deg);
+        z-index: 1;
+    }
+    50% {
+        z-index: 1;
+    }
+    50% {
+        z-index: 3;
+    }
+    80% {
+        z-index: 3;
+    }
+    100% {
+        transform: rotateX(60deg) rotateY(240deg) rotateZ(360deg);
+        z-index: 1;
+    }
+}
+
+/* ----- Axis rotation for Sphere 6 ----- */
+@keyframes axis_rotate6 {
+    0% {
+        transform: rotateX(60deg) rotateY(300deg) rotateZ(0deg);
+        z-index: 1;
+    }
+    50% {
+        z-index: 1;
+    }
+    50% {
+        z-index: 3;
+    }
+    80% {
+        z-index: 3;
+    }
+    100% {
+        transform: rotateX(60deg) rotateY(300deg) rotateZ(360deg);
+        z-index: 1;
+    }
+}
+
+
+
+
+/*Blinking Text Effect*/
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/*End of Blinking*/
+
+.word {
+  position: relative;
+  z-index: 1;
+  font-family: 'Titillium Web', sans-serif;
+  &:before {
+    content: '';
+    background: radial-gradient(circle at 40% 20%, #fcfcfc 0%, #ddd 10%, #333 50%, black 70%);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-40%, -35%);
+    filter: blur(0.5px);
+  }
+}
+}
+
+span {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+button:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+
+}
+
+img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+div#speedbump {
+  display: none;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #eeeeee;
+}
+#speedbump h4.modal-title {
+  text-align: center;
+  text-transform: uppercase;
+  color: #004795;
+  font-size:2.5em;
+}
+.modal-body p {
+  text-align:center;
+  font-size: 1em;
+}
+button.btn-modal:hover {
+  cursor: pointer;
+}
+button.btn-modal.btn-continue {
+  background-color: #8bc63e;
+  border: 0px;
+  margin: 1% 0;
+}
+button.btn-modal.btn-close {
+  background-color: inherit;
+  border: 1px solid #030000;
+  color: #030000;
+  font-weight: 400;
+}
+.modal-header .close {
+  font-size: 3.5em;
+}
+
+/*JSFiddle*/
+
+
+
+h2 {
+font-size: 1.5em;
+margin-bottom: 10px; display: block;
+
+}
+
+p {
+margin-bottom: 15px;
+display: block;
+font-size: 0.8em;
+}
+
+label {
+font-weight: bold;
+}
+
+textarea, input[type=text] {
+    padding: 3px 5px;
+    width: 80%;
+    display: block;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+
+textarea {
+height: 70px;
+}
+
+
+
+/*Tag Converter*/
+.comicg {
+font-family: Comic Sans MS;
+
+}
+
+
+input.largerCheckbox {
+  width: 25px;
+  height: 25px;
+}
+
+.orin{
+    margin-left:50px;
+}
+</style>
+
+</head>
+
+
+
+<body class="comicg">
+
+<div class="wrapper">
+    <div class="blackpink">The Hu<span>B</span>-Net<span>W</span>ork</div>
+
+</div>
+
+
+<div id="dot1" >
+    <div class="dot dot1">
+        <div class="dot dot1">
+            <div class="dot dot1">
+                <div class="dot dot1">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dot2">
+    <div class="dot dot2">
+        <div class="dot dot2">
+            <div class="dot dot2">
+                <div class="dot dot2">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dot3">
+    <div class="dot dot3">
+        <div class="dot dot3">
+            <div class="dot dot3">
+                <div class="dot dot3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dot4">
+    <div class="dot dot4">
+        <div class="dot dot4">
+            <div class="dot dot4">
+                <div class="dot dot4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dot5">
+    <div class="dot dot5">
+        <div class="dot dot5">
+            <div class="dot dot5">
+                <div class="dot dot5">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dot6">
+    <div class="dot dot6">
+        <div class="dot dot6">
+            <div class="dot dot6">
+                <div class="dot dot6">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="inner">
+    <div class="inner">
+        <div class="inner">
+            <div class="inner">
+                <div class="inner">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main plane">
+    <div class="circle">
+        <div class="circle">
+            <div class="circle">
+                <div class="circle">
+                    <div class="circle">
+                        <div class="circle">
+                            <div class="circle">
+                                <div class="circle">
+                                    <div class="circle">
+                                        <div class="circle">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="modalOverlay" style="padding-bottom:390px;margin-top:100px;">
+    <div class="modalPopup">
+        <div class="headerBar">
+            <img src="images/icon.png" alt="Logo">
+        </div>
+        <div class="modalContent">
+            <center style="color:black;font-size:45px;">User Notice | Dark Hub</center>
+            <p style="color:black;"><big>All repo's are free to download. Please do not alter any of the coding if the products are licensed. The Dark Hub protects it's private community.</big></p>
+            <button class="buttonStyle" id="button" style="margin-left:230px;" >Close</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<main>
+    <center style="color:pink;font-size:50px;margin-top:500px;"><a style="color:pink;" href="profile.html"><i class="material-icons">android</i>Avandra Loth Haim<i class="material-icons">android</i></a></center>
+<table style="margin-top:100px; margin-left:140px;">
+    <tr>
+        <!-- Creating heading of table -->
+        <th>Repo Name</th>
+        <th>Code Type</th>
+        <th>Purpose</th>
+        <th>License Type</th>
+        <th>Download</th>
+
+
+    </tr>
+
+    <tr>
+        <!-- Add 1st data to table -->
+        <td>Parallax Work</td>
+        <td>HTML/CSS/JS</td>
+        <td>Business Boaster</td>
+        <td>MIT</td>
+        <td><a class="blink_me" style="color:white;" href="README.md" download>Zip File</a></td>
+    </tr>
+
+    <tr>
+        <!-- Add 2nd data to table -->
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+
+    <tr>
+        <!-- Add 3rd data to table -->
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+
+    <tr>
+        <!-- Add 4rd data to table -->
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+</table>
+</main>
+
+<section class="diablo">
+    <div class="container3">
+        <div class="row mt-5">
+            <div class="col-sm-12">
+                <p class="text-center">
+                    <h1 style="color:white;margin-left:-690px;">Parallax HTML Code: </h1>
+                    <a href="files/code.txt" class="btn btn-info btn-lg cta-open"
+                       style="margin-left:450px;position: relative;bottom: 40px;font-size:30px;color:red;">HTML</a>
+                    <a  style="margin-left:20px;position: relative;bottom: 40px;font-size:30px;color:yellow;" href="#" class="btn btn-info btn-lg cta-open">CSS</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+   <div class="orin">
+       <center style="color:hotpink;font-size:40px;">-Paste Your Code & Convert-</center>
+       <center style="color:hotpink;font-size:30px;">CoDeX ConVerteR</center>
+       <center style="color:hotpink;font-size:20px;">Convert Your HTML Code To Entities</center>
+
+
+       <form name="convert" style="margin-left:80px;">
+            <table border="0" width="600">
+                <tbody><tr>
+                    <td bgcolor="lightyellow" colspan="2" >
+                        <input style="margin-left:-140px;" type="checkbox" class="largerCheckbox" name="withPre"> Retain formatting? [not recommended for long lines of code]
+                    </td>
+                </tr>
+                <tr >
+                    <td>
+                        <input  type="reset"> [clear previous input] <br> &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <th>Enter HTML and text below</th>
+                    <th>Script will display converted HTML and text.<br>Cut &amp; paste into your posting. </th>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td align="center"> <a href="javascript:selectAll(&#39;convert.textbox2&#39;)"><b>Select All</b></a> </td>
+                </tr>
+                <tr>
+                    <td><textarea  style="margin-left:40px;" name="textbox1" cols="55" rows="22"></textarea>  <!-- single line to avoid 'tab' starting point -->
+                    </td>
+                    <td><textarea style="margin-left:40px;" name="textbox2" cols="55" rows="22"></textarea>  <!-- single line to avoid 'tab' starting point -->
+                    </td>
+                </tr>
+                <tr align="center" bgcolor="lightgreen">
+                    <td colspan="2">
+                        <input type="button" value="Convert HTML tags for display" onclick="toCharEnt();">
+                    </td>
+                </tr></tbody></table>
+            <br>
+
+        </form>
+
+    </div>
+
+
+
+
+</section>
+
+
+</body>
+</html>

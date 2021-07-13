@@ -1,0 +1,22 @@
+{
+  "name": "social-challenge",
+  "version": "1.0.0",
+  "description": "A practice of html and css",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helphop/social-media-challenge.git"
+  },
+  "author": "Chell Gouda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helphop/social-media-challenge/issues"
+  },
+  "homepage": "https://github.com/helphop/social-media-challenge#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

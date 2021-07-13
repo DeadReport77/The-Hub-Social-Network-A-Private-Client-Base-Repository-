@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en-US">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: #616161;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+/*Image zoom*/
+#zoom {
+  transition: transform .2s; /* Animation */
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+#zoom:hover {
+  transform: scale(1.1); /* (100% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+.container {
+  width: 70vw;
+  max-height: 70vh;
+  margin: 10vh auto 0;
+}
+.users-container {
+  width: 70vw;
+  max-height: 40vh;
+  border: 1px solid #555;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.user {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.user a {
+  color: black;
+}
+.user small, .user small a {
+  color: #808080;
+}
+.user .user-data {
+  flex-grow: 1;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f6f6f6;
+  font-family: sans-serif;
+  cursor: default;
+}
+label {
+  cursor: pointer;
+  user-select: none;
+}
+header {
+  text-align: right;
+  padding: 10px;
+}
+small {
+  font-size: 10px;
+  font-style: italic;
+}
+input:not(.btn) {
+  width: 200px;
+  height: 20px;
+}
+textarea, input, .btn {
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+  margin: 2px 0;
+  font-family: sans-serif;
+}
+textarea:focus, input:focus, .btn:focus {
+  border: 1px solid #39a0ed;
+  box-shadow: 0;
+  outline: none;
+}
+.btn {
+  background-color: gray;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.btn:hover, .btn:focus {
+  background-color: #000000;
+}
+a, .btn {
+  color: white;
+  text-decoration: none;
+}
+a:hover, a:focus, .btn:hover, .btn:focus {
+  text-decoration: underline;
+}
+
+
+
+#sign {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*-- Animation Keyframes --*/
+}
+#sign__word {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1;
+  color: #c6e2ff;
+  animation: neon 0.08s ease-in-out infinite alternate;
+}
+@keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px #1e84f2;
+  }
+}
+.link {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #828282;
+  text-decoration: none;
+}
+.link:focus, .link:hover {
+  color: #c6e2ff;
+  text-shadow: 0 0 2px rgba(202, 228, 225, 0.92), 0 0 10px rgba(202, 228, 225, 0.34), 0 0 4px rgba(30, 132, 242, 0.52), 0 0 7px rgba(30, 132, 242, 0.92), 0 0 11px rgba(30, 132, 242, 0.78), 0 0 16px rgba(30, 132, 242, 0.92);
+}
+</style>
+
+    <script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
+</head>
+<body style="background:black;">
+
+<div class="container" id="sign" style="background:black;">
+    <center id="sign__word" style="font-size:60px;margin-top:-10px;">Quick Search Teleport</center>
+    <input style="margin-top:20px;" placeholder="Search" id="search-users" class="search-users" type="text" autofocus>
+    <div class="users-container">
+        <div class="user">
+            <span class="user-data"><span class="user-name"><a href="#" style="color:white;" >Romulous</a></span> <small class="user-email">(<a href="#" style="color:white;">email1@example.com</a>)</small></span>
+
+        </div>
+        <div class="user">
+            <span class="user-data"><span class="user-name"><a href="#" style="color:white;">Julia</a></span> <small class="user-email">(<a href="#" style="color:white;">email2@example.com</a>)</small></span>
+
+        </div>
+        <div class="user">
+            <span class="user-data"><span class="user-name"><a href="#" style="color:white;">Eva Green</a></span> <small class="user-email">(<a href="#" style="color:white;">email3@example.com</a>)</small></span>
+
+        </div>
+        <div class="user">
+            <span class="user-data"><span class="user-name"><a href="profile.html" style="color:white;">Avandra</a></span> <small class="user-email">(<a href="#" style="color:white;">email4@example.com</a>)</small></span>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+    <h1 id="sign__word"  style="text-align:center;color:white;margin-top:20px;">Hub Community Member Access</h1>
+    <hr>
+
+    <h2 id="sign__word"  style="text-align:center;color:white;">The Drift</h2>
+
+    <div id="myBtnContainer" style="margin-left:350px;">
+        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterSelection('nature')">1st Row</button>
+        <button class="btn" onclick="filterSelection('cars')">2nd Row</button>
+        <button class="btn" onclick="filterSelection('people')">3rd Row</button>
+    </div>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+        <div class="column nature">
+            <div class="content"  >
+               <a href="#"><img  id="zoom" src="w3profile/p1.jpg" alt="Mountains" style="width:300px; height:300px;"></a>
+                <h3 style="text-align:center;">Romulous</h3>
+                <center>Kat Cool</center>
+            </div>
+        </div>
+        <div class="column nature">
+            <div class="content">
+                <a href="#"><img id="zoom"  src="w3profile/p2.jpg" alt="Mountains" style="width:300px; height:300px;"></a>
+                <h3 style="text-align:center;">Julia Styles</h3>
+                <center>Kick Start</center>
+            </div>
+        </div>
+        <div class="column nature">
+            <div class="content">
+                <a href="#"><img id="zoom"  src="w3profile/p3.jpg" alt="Mountains" style="width:300px; height:300px;"></a>
+                <h3 style="text-align:center;">Eva Green</h3>
+                <center>Penny Dreadful</center>
+            </div>
+        </div>
+
+        <div class="column cars">
+            <div class="content">
+                <a href="profile.html"><img id="zoom" src="w3profile/8.jpg" alt="Mountains" style="width:300px; height:300px;"></a>
+                <h3 style="text-align:center;">Avandra Loth Haim</h3>
+                <center>Inceptionist</center>
+            </div>
+        </div>
+        <div class="column cars">
+            <div class="content">
+                <a href="#"><img id="zoom" src="w3profile/p4.jpg" alt="Mountains" style="width:300px; height:300px;"></a>
+                <h3 style="text-align:center;">Stasis</h3>
+                <center>Druag</center>
+            </div>
+        </div>
+        <div class="column cars">
+            <div class="content">
+                <a href="#"><img id="zoom" src="w3profile/p5.png" alt="Mountains" style="width:300px; height:300px;"></a>
+                <h3 style="text-align:center;">Zadies</h3>
+                <center>Entrivium</center>
+            </div>
+        </div>
+
+        <div class="column people">
+            <div class="content">
+                <a href="#"><img id="zoom" src="w3profile/p6.jpg" alt="Mountains" style="width:300px; height:300px;"></a>
+                <h3 style="text-align:center;">Kulsa</h3>
+                <center>Vularum</center>
+            </div>
+        </div>
+        <div class="column people">
+            <div class="content">
+                <a href="#"><img id="zoom" src="w3profile/p7.jpg" alt="Mountains" style="width:300px; height:300px;"></a>
+                <h3 style="text-align:center;">Ragnar</h3>
+                <center>Katika</center>
+            </div>
+        </div>
+        <div class="column people">
+            <div class="content">
+                <a href="#"><img id="zoom" src="w3profile/p8.jpg" alt="Mountains" style="width:300px; height:300px;"></a>
+                <h3 style="text-align:center;">Boudicca</h3>
+                <center>Iceni</center>
+            </div>
+        </div>
+        <!-- END GRID -->
+    </div>
+
+    <!-- END MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btn = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btn.length; i++) {
+  btn[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+<script>
+    var searchUsers = document.querySelector('#search-users'),
+    users = document.querySelectorAll('.user'),
+    usersData = document.querySelectorAll('.user-data'),
+    searchVal;
+
+searchUsers.addEventListener('keydown', function() {
+  searchVal = this.value.toLowerCase();
+
+  for (var i = 0; i < users.length; i++) {
+    if (!searchVal || usersData[i].textContent.toLowerCase().indexOf(searchVal) > -1) {
+      users[i].style['display'] = 'flex';
+    }
+    else {
+      users[i].style['display'] = 'none';
+    }
+  }
+});
+</script>
+
+</body>
+</html>
